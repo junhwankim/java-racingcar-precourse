@@ -18,4 +18,8 @@ public class RandomNumber {
 	public int Value() {
 		return value;
 	}
+
+	public boolean isGreaterThanOrEqualTo(int value) {
+		return this.value >= value;
+	}
 }
