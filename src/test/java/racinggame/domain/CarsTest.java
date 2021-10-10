@@ -35,4 +35,17 @@ class CarsTest {
 		assertThat(cars.getCars().get(0).getName()).isEqualTo("mario");
 		assertThat(cars.getCars().get(1).getName()).isEqualTo("luigi");
 	}
+
+	@Test
+	@DisplayName("자동차 이동 테스트, 자동차는 전진했거나 멈춰있다.")
+	void testMoveCars() {
+		Car car1 = new Car("mario");
+		Car car2 = new Car("luigi");
+
+		Cars cars = new Cars(Arrays.asList(car1, car2));
+		cars.moveCars();
+
+		assertThat(car1.getPosition()).isIn(0, 1);
+		assertThat(car2.getPosition()).isIn(0, 1);
+	}
 }
