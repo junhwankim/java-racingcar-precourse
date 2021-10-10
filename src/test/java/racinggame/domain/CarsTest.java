@@ -25,15 +25,17 @@ class CarsTest {
 	}
 
 	@Test
-	@DisplayName("Car List를 반환한다.")
+	@DisplayName("Car List를 얻어올 수 있다.")
 	void testGetCars() {
-		List<Car> carList = Arrays.asList(new Car("mario"), new Car("luigi"));
+		Car car1 = new Car("mario");
+		Car car2 = new Car("luigi");
 
-		Cars cars = new Cars(carList);
+		Cars cars = new Cars(Arrays.asList(car1, car2));
+		List<Car> carList = cars.getCars();
 
-		assertThat(cars.getCars()).hasSize(2);
-		assertThat(cars.getCars().get(0).getName()).isEqualTo("mario");
-		assertThat(cars.getCars().get(1).getName()).isEqualTo("luigi");
+		assertThat(carList).hasSize(2);
+		assertThat(carList.get(0).getName()).isEqualTo(car1.getName());
+		assertThat(carList.get(1).getName()).isEqualTo(car2.getName());
 	}
 
 	@Test
