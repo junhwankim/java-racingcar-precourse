@@ -16,4 +16,9 @@ public class Car {
 	public int getPosition() {
 		return this.position.getPosition();
 	}
+
+	public void move(MoveCommand command) {
+		if (command.equals(MoveCommand.FORWARD))
+			position.moveForward();
+	}
 }
