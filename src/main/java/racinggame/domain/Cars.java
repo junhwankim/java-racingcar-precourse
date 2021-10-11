@@ -20,7 +20,7 @@ public class Cars {
 		ArrayList<Car> cars = new ArrayList<>();
 
 		for (String name: names) {
-			cars.add(new Car(name));
+			cars.add(Car.createCar(name));
 		}
 
 		return new Cars(cars);
