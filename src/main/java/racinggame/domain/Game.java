@@ -1,5 +1,8 @@
 package racinggame.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
 	private final Cars cars;
 	private final Lap maxLap;
@@ -15,8 +18,20 @@ public class Game {
 		return this.currentLap.count() > this.maxLap.count();
 	}
 
-	public void race() {
+	public RaceResult race() {
 		cars.moveCars();
 		this.currentLap = new Lap(currentLap.count() + 1);
+		return createRaceResult(cars);
+	}
+
+	public RaceResult createRaceResult(Cars cars) {
+		List<CarStatus> statuses = new ArrayList<>();
+
+		for (Car car: cars.getCars()) {
+			CarStatus status = new CarStatus(car.getName(), car.getPosition());
+			statuses.add(status);
+		}
+
+		return new RaceResult(statuses);
 	}
 }
