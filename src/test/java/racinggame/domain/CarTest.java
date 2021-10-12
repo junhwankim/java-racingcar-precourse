@@ -1,7 +1,6 @@
 package racinggame.domain;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -21,8 +20,8 @@ public class CarTest {
 	@Test
 	@DisplayName("생성 테스트")
 	void testCar() {
-		assertThat(car.getName()).isEqualTo(name);
-		assertThat(car.getPosition()).isEqualTo(0);
+		assertThat(car.name()).isEqualTo(name);
+		assertThat(car.position()).isEqualTo(0);
 	}
 
 	@Test
@@ -30,7 +29,7 @@ public class CarTest {
 	void testMoveCommandForward() {
 		car.move(MoveCommand.FORWARD);
 
-		assertThat(car.getPosition()).isEqualTo(1);
+		assertThat(car.position()).isEqualTo(1);
 	}
 
 	@Test
@@ -38,6 +37,6 @@ public class CarTest {
 	void testMoveCommandStop() {
 		car.move(MoveCommand.STOP);
 
-		assertThat(car.getPosition()).isEqualTo(0);
+		assertThat(car.position()).isEqualTo(0);
 	}
 }

@@ -1,9 +1,7 @@
 package racinggame.domain;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
@@ -29,18 +27,18 @@ class CarsTest {
 		List<Car> carList = cars.getCars();
 
 		assertThat(carList).hasSize(2);
-		assertThat(carList.get(0).getName()).isEqualTo("mario");
-		assertThat(carList.get(1).getName()).isEqualTo("luigi");
+		assertThat(carList.get(0).name()).isEqualTo("mario");
+		assertThat(carList.get(1).name()).isEqualTo("luigi");
 	}
 
 	@Test
 	@DisplayName("자동차 이동 테스트, 자동차는 전진했거나 멈춰있다.")
 	void testMoveCars() {
 		Cars cars = Cars.createCars("mario,luigi");
-		cars.moveCars();
+		cars.move();
 
 		for (Car car: cars.getCars()) {
-			assertThat(car.getPosition()).isIn(0, 1);
+			assertThat(car.position()).isIn(0, 1);
 		}
 	}
 }

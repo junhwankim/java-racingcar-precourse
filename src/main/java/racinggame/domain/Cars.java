@@ -33,7 +33,7 @@ public class Cars {
 		return this.cars;
 	}
 
-	public void moveCars() {
+	public void move() {
 		for (Car car : this.cars) {
 			RandomNumber randomNumber = RandomNumber.generateRandomNumber();
 			MoveCommand command = MoveCommand.convertMoveCommand(randomNumber);

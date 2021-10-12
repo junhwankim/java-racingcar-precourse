@@ -17,7 +17,7 @@ public class RandomNumber {
 		return new RandomNumber();
 	}
 
-	public int Value() {
+	public int value() {
 		return value;
 	}
 

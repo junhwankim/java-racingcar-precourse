@@ -10,14 +10,14 @@ public class PositionTest {
 	@DisplayName("기본 값은 0이다.")
 	void testInitialValueIsZero() {
 		Position position = new Position();
-		assertThat(position.getPosition()).isEqualTo(0);
+		assertThat(position.position()).isEqualTo(0);
 	}
 
 	@Test
 	@DisplayName("위치 값을 지정해서 생성할 수 있다.")
 	void testSpecificPosition() {
 		Position position = new Position(3);
-		assertThat(position.getPosition()).isEqualTo(3);
+		assertThat(position.position()).isEqualTo(3);
 	}
 
 	@Test

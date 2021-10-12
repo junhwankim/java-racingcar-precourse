@@ -17,7 +17,7 @@ class RandomNumberTest {
 	void testRandomNumberRange() {
 		RandomNumber randomNumber = RandomNumber.generateRandomNumber();
 
-		assertThat(randomNumber.Value()).isGreaterThanOrEqualTo(RandomNumber.RANDOM_NUMBER_RANGE_MIN);
-		assertThat(randomNumber.Value()).isLessThanOrEqualTo(RandomNumber.RANDOM_NUM_RANGE_MAX);
+		assertThat(randomNumber.value()).isGreaterThanOrEqualTo(RandomNumber.RANDOM_NUMBER_RANGE_MIN);
+		assertThat(randomNumber.value()).isLessThanOrEqualTo(RandomNumber.RANDOM_NUM_RANGE_MAX);
 	}
 }

@@ -15,17 +15,17 @@ public class Car {
 		return new Car(name);
 	}
 
-	public String getName() {
-		return this.name.getName();
+	public String name() {
+		return this.name.name();
 	}
 
-	public int getPosition() {
-		return this.position.getPosition();
+	public int position() {
+		return this.position.position();
 	}
 
 	public void move(MoveCommand command) {
 		if (command.equals(MoveCommand.FORWARD))
-			this.position = new Position(this.getPosition() + 1);
+			this.position = new Position(this.position() + 1);
 	}
 
 	@Override

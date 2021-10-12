@@ -19,7 +19,7 @@ public class Game {
 	}
 
 	public RaceResult race() {
-		cars.moveCars();
+		cars.move();
 		this.currentLap = new Lap(currentLap.count() + 1);
 		return createRaceResult(cars);
 	}
@@ -28,7 +28,7 @@ public class Game {
 		List<CarStatus> statuses = new ArrayList<>();
 
 		for (Car car: cars.getCars()) {
-			CarStatus status = new CarStatus(car.getName(), car.getPosition());
+			CarStatus status = new CarStatus(car.name(), car.position());
 			statuses.add(status);
 		}
 

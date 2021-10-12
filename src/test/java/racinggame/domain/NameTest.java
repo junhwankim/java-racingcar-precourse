@@ -14,7 +14,7 @@ public class NameTest {
 	void testSameName(String input) {
 		Name name = new Name(input);
 
-		assertThat(name.getName()).isEqualTo(input);
+		assertThat(name.name()).isEqualTo(input);
 	}
 
 	@ParameterizedTest

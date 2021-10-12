@@ -21,7 +21,7 @@ public class Position {
 			throw new IllegalArgumentException(message.ERROR_POSITION_NOT_LESS_THAN_ZERO);
 	}
 
-	public int getPosition() {
+	public int position() {
 		return this.position;
 	}
 
