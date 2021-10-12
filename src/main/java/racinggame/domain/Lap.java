@@ -5,7 +5,7 @@ import java.util.Objects;
 import racinggame.config.message;
 
 public class Lap {
-	public static final int LAP_MIN_COUNT = 1;
+	static final int LAP_MIN_COUNT = 1;
 	private final int lapCount;
 
 	public Lap(int lapCount) {

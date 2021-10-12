@@ -7,7 +7,7 @@ import java.util.Objects;
 import racinggame.config.message;
 
 public class Cars {
-	public static final String CAR_NAME_SEPARATOR = ",";
+	static final String CAR_NAME_SEPARATOR = ",";
 	private final List<Car> cars;
 
 	private Cars(List<Car> cars) {

@@ -5,7 +5,7 @@ import java.util.Objects;
 import racinggame.config.message;
 
 public class Name {
-	public static final int NAME_MAX_LEN = 5;
+	static final int NAME_MAX_LEN = 5;
 
 	private final String name;
 

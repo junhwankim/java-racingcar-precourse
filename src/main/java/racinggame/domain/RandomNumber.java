@@ -5,8 +5,8 @@ import static nextstep.utils.Randoms.*;
 import java.util.Objects;
 
 public class RandomNumber {
-	public static final int RANDOM_NUMBER_RANGE_MIN = 0;
-	public static final int RANDOM_NUM_RANGE_MAX = 9;
+	static final int RANDOM_NUMBER_RANGE_MIN = 0;
+	static final int RANDOM_NUM_RANGE_MAX = 9;
 	private final int value;
 
 	private RandomNumber() {

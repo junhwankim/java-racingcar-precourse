@@ -1,13 +1,11 @@
 package racinggame.domain;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class LapTest {
-
 	@Test
 	@DisplayName("지정한 Lap Count를 반환한다.")
 	void testLapCount() {
