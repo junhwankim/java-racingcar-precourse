@@ -7,8 +7,10 @@ import racinggame.domain.CarStatus;
 import racinggame.domain.RaceResult;
 
 public class OutputView {
-
-	public static final String WINNER_DELIMITER = ",";
+	private static final String WINNER_DELIMITER = ",";
+	private static final String WINNER_PRINT_MESSAGE = "최종 우승자는 %s 입니다.";
+	private static final String STATUS_PRINT_DELIMITER = " : ";
+	private static final String PROGRESS_SIGN_CHAR = "-";
 
 	public void printMessage(String message) {
 		System.out.println(message);
@@ -29,9 +31,9 @@ public class OutputView {
 		StringBuilder stringBuilder = new StringBuilder();
 
 		stringBuilder.append(status.name());
-		stringBuilder.append(" : ");
+		stringBuilder.append(STATUS_PRINT_DELIMITER);
 		for (int i = 0; i < status.position(); i++) {
-			stringBuilder.append("-");
+			stringBuilder.append(PROGRESS_SIGN_CHAR);
 		}
 
 		return stringBuilder.toString();
@@ -39,7 +41,7 @@ public class OutputView {
 
 	public void printWinners(Winners winners) {
 		String winnerNames = String.join(WINNER_DELIMITER, winners.getWinnerNames());
-		String printString = String.format("최종 우승자는 %s 입니다.", winnerNames);
+		String printString = String.format(WINNER_PRINT_MESSAGE, winnerNames);
 
 		System.out.println(printString);
 	}
