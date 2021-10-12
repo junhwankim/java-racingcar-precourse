@@ -20,14 +20,14 @@ public class OutputView {
 		List<CarStatus> carStatuses = raceResult.getCarStatuses();
 
 		for (CarStatus status: carStatuses) {
-			String result = makePrintString(status);
-			System.out.println(result);
+			String progressString = makeProgressString(status);
+			System.out.println(progressString);
 		}
 
 		System.out.println();
 	}
 
-	private String makePrintString(CarStatus status) {
+	private String makeProgressString(CarStatus status) {
 		StringBuilder stringBuilder = new StringBuilder();
 
 		stringBuilder.append(status.name());
