@@ -3,6 +3,7 @@ package racinggame.controller;
 import racinggame.domain.Cars;
 import racinggame.domain.Game;
 import racinggame.domain.Lap;
+import racinggame.domain.RaceResult;
 import racinggame.view.InputView;
 import racinggame.view.OutputView;
 
@@ -22,7 +23,8 @@ public class GameController {
 		Game game = new Game(cars, lap);
 
 		while (!game.isFinished()) {
-			game.race();
+			RaceResult raceResult = game.race();
+			outputView.printRaceResult(raceResult);
 		}
 	}
 
