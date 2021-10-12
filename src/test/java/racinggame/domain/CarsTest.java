@@ -37,7 +37,7 @@ class CarsTest {
 		Cars cars = Cars.createCars("mario,luigi");
 		cars.move();
 
-		for (Car car: cars.getCars()) {
+		for (Car car : cars.getCars()) {
 			assertThat(car.position()).isIn(0, 1);
 		}
 	}
