@@ -1,5 +1,7 @@
 package racinggame.domain;
 
+import racinggame.config.message;
+
 public class Lap {
 	public static final int LAP_MIN_COUNT = 1;
 	private final int lapCount;
@@ -15,7 +17,7 @@ public class Lap {
 
 	private void validateCount(int lapCount) {
 		if (lapCount < LAP_MIN_COUNT)
-			throw new IllegalArgumentException("[ERROR] 회수는 1 이상이어야 합니다.");
+			throw new IllegalArgumentException(message.ERROR_LAP_COUNT_NOT_CORRECT);
 	}
 
 	public int count() {

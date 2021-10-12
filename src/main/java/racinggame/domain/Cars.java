@@ -3,6 +3,8 @@ package racinggame.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import racinggame.config.message;
+
 public class Cars {
 	public static final String CAR_NAME_SEPARATOR = ",";
 	private final List<Car> cars;
@@ -40,11 +42,11 @@ public class Cars {
 
 	private static void validateNotNull(String carNames) {
 		if (carNames == null)
-			throw new IllegalArgumentException("[ERROR] 자동차는 2대 이상이어야 합니다.");
+			throw new IllegalArgumentException(message.ERROR_CARS_LENGTH_NOT_CORRECT);
 	}
 
 	private void validateCarsSize(List<Car> cars) {
 		if (cars.size() < 2)
-			throw new IllegalArgumentException("[ERROR] 자동차는 2대 이상이어야 합니다.");
+			throw new IllegalArgumentException(message.ERROR_CARS_LENGTH_NOT_CORRECT);
 	}
 }

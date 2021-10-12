@@ -1,5 +1,7 @@
 package racinggame.domain;
 
+import racinggame.config.message;
+
 public class Name {
 	public static final int NAME_MAX_LEN = 5;
 
@@ -24,25 +26,25 @@ public class Name {
 
 	private void validateNotNull(String name) {
 		if (name == null) {
-			throw new IllegalArgumentException("[ERROR] 이름은 최소 1글자에서 최대 5글자로 입력해주세요.");
+			throw new IllegalArgumentException(message.ERROR_CAR_NAME_NOT_CORRECT);
 		}
 	}
 
 	private void validateNotEmpty(String name) {
 		if (name.isEmpty()) {
-			throw new IllegalArgumentException("[ERROR] 이름은 최소 1글자에서 최대 5글자로 입력해주세요.");
+			throw new IllegalArgumentException(message.ERROR_CAR_NAME_NOT_CORRECT);
 		}
 	}
 
 	private void validateLength(String name) {
 		if (name.length() > NAME_MAX_LEN) {
-			throw new IllegalArgumentException("[ERROR] 이름의 길이는 최대 5글자 입니다.");
+			throw new IllegalArgumentException(message.ERROR_CAR_NAME_LENGTH_LIMIT_EXCEED);
 		}
 	}
 
 	private void validateNotContainsWhiteSpace(String name) {
 		if (name.contains(" ")) {
-			throw new IllegalArgumentException("[ERROR] 이름에는 공백을 포함할 수 없습니다.");
+			throw new IllegalArgumentException(message.ERROR_CAR_NAME_CONTAINS_WHITESPACE);
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package racinggame.controller;
 
+import racinggame.config.message;
 import racinggame.domain.Cars;
 import racinggame.domain.Game;
 import racinggame.domain.Lap;
@@ -18,8 +19,8 @@ public class GameController {
 
 	public void run() {
 		Game game = new Game(getCars(), getLap());
-		this.outputView.printMessage("");
-		this.outputView.printMessage("실행 결과");
+		this.outputView.printMessage(message.EMPTY_STRING);
+		this.outputView.printMessage(message.RUN_RESULT);
 		RaceResult raceResult = null;
 		while (!game.isFinished()) {
 			raceResult = game.race();
@@ -65,7 +66,7 @@ public class GameController {
 			int tryNumber = Integer.parseInt(moveTryNumber);
 			return new Lap(tryNumber);
 		} catch (NumberFormatException e) {
-			this.outputView.printMessage("[ERROR] 1이상의 숫자를 입력해주세요.");
+			this.outputView.printMessage(message.ERROR_INPUT_NOT_CORRECT);
 		} catch (IllegalArgumentException e) {
 			this.outputView.printMessage(e.getMessage());
 		}
