@@ -25,7 +25,7 @@ public class CarTest {
 	}
 
 	@Test
-	@DisplayName("이동 명령에 따라 움직여야 한다.")
+	@DisplayName("FORWARD 명령을 받으면 이동한다.")
 	void testMoveCommandForward() {
 		car.move(MoveCommand.FORWARD);
 
@@ -33,7 +33,7 @@ public class CarTest {
 	}
 
 	@Test
-	@DisplayName("이동 명령에 따라 움직여야 한다.")
+	@DisplayName("STOP 명령을 받으면 이동하지 않는다.")
 	void testMoveCommandStop() {
 		car.move(MoveCommand.STOP);
 
