@@ -2,7 +2,7 @@ package racinggame.domain;
 
 public class Car {
 	private final Name name;
-	private final Position position;
+	private Position position;
 
 	private Car(String name) {
 		this.name = new Name(name);
@@ -23,6 +23,6 @@ public class Car {
 
 	public void move(MoveCommand command) {
 		if (command.equals(MoveCommand.FORWARD))
-			position.moveForward();
+			this.position = new Position(this.getPosition() + 1);
 	}
 }

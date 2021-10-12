@@ -20,12 +20,4 @@ public class PositionTest {
 	void testInitialValueIsZero() {
 		assertThat(position.getPosition()).isEqualTo(0);
 	}
-
-	@Test
-	@DisplayName("전진하면 position이 1 증가한다.")
-	void testPosition() {
-		position.moveForward();
-
-		assertThat(position.getPosition()).isEqualTo(1);
-	}
 }
