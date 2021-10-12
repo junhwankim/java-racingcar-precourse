@@ -1,5 +1,7 @@
 package racinggame.domain;
 
+import java.util.Objects;
+
 import racinggame.config.message;
 
 public class Lap {
@@ -22,5 +24,20 @@ public class Lap {
 
 	public int count() {
 		return this.lapCount;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Lap lap = (Lap)o;
+		return lapCount == lap.lapCount;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(lapCount);
 	}
 }

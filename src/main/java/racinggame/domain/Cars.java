@@ -2,6 +2,7 @@ package racinggame.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import racinggame.config.message;
 
@@ -48,5 +49,20 @@ public class Cars {
 	private void validateCarsSize(List<Car> cars) {
 		if (cars.size() < 2)
 			throw new IllegalArgumentException(message.ERROR_CARS_LENGTH_NOT_CORRECT);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Cars cars1 = (Cars)o;
+		return Objects.equals(cars, cars1.cars);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cars);
 	}
 }

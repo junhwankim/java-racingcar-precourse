@@ -1,5 +1,7 @@
 package racinggame.domain;
 
+import java.util.Objects;
+
 import racinggame.config.message;
 
 public class Name {
@@ -46,5 +48,20 @@ public class Name {
 		if (name.contains(" ")) {
 			throw new IllegalArgumentException(message.ERROR_CAR_NAME_CONTAINS_WHITESPACE);
 		}
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Name name1 = (Name)o;
+		return Objects.equals(name, name1.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
 	}
 }
