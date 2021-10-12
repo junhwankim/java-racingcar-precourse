@@ -17,15 +17,16 @@ public class GameController {
 	}
 
 	public void run() {
-		Cars cars = getCars();
-		Lap lap = getLap();
-
-		Game game = new Game(cars, lap);
-
+		Game game = new Game(getCars(), getLap());
+		this.outputView.printMessage("");
+		this.outputView.printMessage("실행 결과");
+		RaceResult raceResult = null;
 		while (!game.isFinished()) {
-			RaceResult raceResult = game.race();
-			outputView.printRaceResult(raceResult);
+			raceResult = game.race();
+			this.outputView.printRaceResult(raceResult);
 		}
+		Winners winner = new Winners(raceResult);
+		this.outputView.printWinners(winner);
 	}
 
 	private Lap getLap() {

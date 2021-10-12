@@ -2,10 +2,14 @@ package racinggame.view;
 
 import java.util.List;
 
+import racinggame.controller.Winners;
 import racinggame.domain.CarStatus;
 import racinggame.domain.RaceResult;
 
 public class OutputView {
+
+	public static final String WINNER_DELIMITER = ",";
+
 	public void printMessage(String message) {
 		System.out.println(message);
 	}
@@ -31,5 +35,12 @@ public class OutputView {
 		}
 
 		return stringBuilder.toString();
+	}
+
+	public void printWinners(Winners winners) {
+		String winnerNames = String.join(WINNER_DELIMITER, winners.getWinnerNames());
+		String printString = String.format("최종 우승자는 %s 입니다.", winnerNames);
+
+		System.out.println(printString);
 	}
 }
